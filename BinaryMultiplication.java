@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import packages.dataformat.Initializing;
-
 public class BinaryMultiplication {
 
     // print calculations

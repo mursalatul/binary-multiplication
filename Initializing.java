@@ -1,10 +1,9 @@
-package packages.dataformat;
-
 /**
  * initialize the value of carry bit, add bits, and the two values q and m. here q and m is the targeted value.
  * 
  * @author Md Mursalatul Islam Pallob
 */
+
 public class Initializing {
     public String c = "0", a = "", q, m;
     public final int len; // store the len of the bits(here len of c = a = q = m)
