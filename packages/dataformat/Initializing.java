@@ -1,8 +1,13 @@
 package packages.dataformat;
 
+/**
+ * initialize the value of carry bit, add bits, and the two values q and m. here q and m is the targeted value.
+ * 
+ * @author Md Mursalatul Islam Pallob
+*/
 public class Initializing {
     public String c = "0", a = "", q, m;
-    public final int len;
+    public final int len; // store the len of the bits(here len of c = a = q = m)
 
     public Initializing (String x, String y) {
         // setting the len (max len)
@@ -28,23 +33,28 @@ public class Initializing {
         return s;
     }
 
-    // make the 3 binteger same size
+    // make the 3 binary number same size
     private void formatLen() {
         // converting q and m same lenght
         if (q.length() > m.length()) {
+            // add leading zeros with m
             m = addZero(q.length() - m.length(), m);
         }
         else {
+            // add leading zeros with q
             q = addZero(m.length() - q.length(), q);
         }
+        // initialize a(at first it will contain only zeros)
         a = addZero(q.length(), a);
     }
 
     // add a and m
     public void add() {
+        // convert a and m into integer number
         int int_a = Integer.parseInt(a, 2);
         int int_m = Integer.parseInt(m, 2);
 
+        // convert the summation of a and b into binary String again
         String temp_sum = Integer.toBinaryString(int_a + int_m);
         if (temp_sum.length() > len) {
             c = "1";
